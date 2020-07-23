@@ -1,0 +1,8 @@
+source ~/.zshrc_common
+
+export PATH=$HOME/AppData/Local/Programs/Microsoft\ VS\ Code\ Insiders/bin:$PATH
+
+ZSH_DISABLE_COMPFIX=true
+
+alias emacs="emacs &"
+export DISPLAY=:0.0

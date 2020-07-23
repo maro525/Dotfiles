@@ -1,0 +1,31 @@
+export TERM="xterm-256color"
+
+source ~/.zshrc_common
+
+# node.js
+PATH=/Users/hidemaro/.nodebrew/current/bin:$PATH
+
+#pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# alias
+alias brewupdate="brew upgrade && brew update && rm -rf $(brew --cache)"
+alias nodeltscheck="curl -s https://nodejs.org/download/release/index.json | jq -r 'sort_by(.date) | reverse | map(select(.lts != false)) | .[0].version'"
+alias python="python3"
+alias pip="pip3"
+
+# java
+export JAVA_HOME=`/usr/libexec/java_home -v "13"`
+PATH=${JAVA_HOME}/biin:${PATH}
+
+# processing-py
+PATH=/Users/hidemaro/myLibrary/processingpy:$PATH
+
+# gnu-sed
+PATH=/usr/local/opt/gnu-sed/libexec/gnubin/:$PATH
+
+# vim
+export MYVIMRC="~/.config/nvim/init.vim"
+export SPACECONFIG="~/.local/share/nvim/plugged/vim-spacemacs/plugin/spacemacs.vim"

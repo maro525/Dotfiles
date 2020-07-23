@@ -1,0 +1,14 @@
+CARGO_HOME=$HOME/.cargo/bin
+RUSTUP_HOME=$HOME/.rustup
+NODE_PATH=$HOME/.nodebrew/node/v.12.13.1/lib/node_modules
+
+path=(
+    $HOME/.zsh/pure(N-/)
+    $HOME/.cargo/bin(N-/)
+    $HOME/.nodebrew/current/bin(N-/)
+    $HOME/.local/bin(N-/)
+    $HOME/.nodebrew/current/bin(N-/)
+    $HOME/.nodebrew/node/v12.13.1/bin(N-/)
+    $HOME/go(N-/)
+    $path
+)

@@ -1,0 +1,31 @@
+#zsh
+export ZSH=~/.oh-my-zsh
+source ~/.zshrc_powerline9k
+
+export DEFAULT_USER="$USER"
+
+plugins=(
+    git
+    colorize
+    github
+    pip
+    python
+    brew
+    osx
+    zsh-syntax-highlighting
+    zsh-autosuggestions
+    history-substring-search
+)
+autoload  -U compinit
+compinit
+
+source $ZSH/oh-my-zsh.sh
+
+# alias
+alias ls="ls -a"
+alias drop="cd ~/Dropbox"
+alias zshrcedit="vim ~/.zshrc"
+alias pythonsimpleserver="python -m http.server"
+
+# rust
+export PATH=/Users/hidemaro/.cargo/bin:$PATH

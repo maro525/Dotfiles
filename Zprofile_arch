@@ -1,0 +1,26 @@
+# コマンド履歴
+HISTFILE=~/.zsh_history
+HISTSIZE=6000000
+SAVEHIST=6000000
+setopt hist_ignore_dups     # ignore duplication command history list
+setopt share_history        # share command history data
+
+#zsh
+setopt hist_reduce_blanks
+setopt inc_append_history
+setopt auto_cd
+setopt correct_all
+setopt auto_list
+setopt auto_menu
+setopt always_to_end
+
+zstyle ':completion:*' menu select # select completions with arrow keys
+zstyle ':completion:*' group-nmae # group results by category
+zstyle ':completion:::::' completer _expand _complete _ignored _approximate # enable approximate matches for completions
+
+# language and localization variables
+export LANG=ja_JP.UTF-8
+export LC_ALL=ja_JP.UTF-8
+
+PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin
+export PATH
