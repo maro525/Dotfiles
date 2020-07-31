@@ -6,3 +6,6 @@ ZSH_DISABLE_COMPFIX=true
 
 alias emacs="emacs &"
 export DISPLAY=:0.0
+
+eval `ssh-agent` > /dev/null
+ssh-add /home/hdmrf/.ssh/id_rsa >& /dev/null

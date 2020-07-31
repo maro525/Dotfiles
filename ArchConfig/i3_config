@@ -34,7 +34,7 @@ bindsym $mod+Shift+q kill
 
 # start program launcher
 # bindsym $mod+d exec --no-startup-id dmenu_recency
-bindsym $mod+d exec --no-startup-id rofi -show combi
+bindsym $mod+d exec --no-startup-id rofi -show drun -theme ~/.config/rofi/Marokai.rasi
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -287,6 +287,7 @@ exec --no-startup-id dropbox
 exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id xmodmap ~/.xmodmap
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
@@ -296,7 +297,7 @@ exec_always --no-startup-id fix_xcursor
 # Change the variable name at the place you want to match the color
 # of your terminal like this:
 # [example]
-# If you want your bar to have the same background color as your 
+# If you want your bar to have the same background color as your
 # terminal background change the line 362 from:
 # background #14191D
 # to:
