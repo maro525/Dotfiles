@@ -75,6 +75,7 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # change focus
 bindsym $mod+j focus left
+bindsym $mod+Tab focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
@@ -275,7 +276,7 @@ bindsym $mod+9 exec --no-startup-id blurlock
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b
-exec --no-startup-id manjaro-hello
+# exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
@@ -287,7 +288,6 @@ exec --no-startup-id dropbox
 exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 10 -locker blurlock
-exec --no-startup-id xmodmap ~/.xmodmap
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
