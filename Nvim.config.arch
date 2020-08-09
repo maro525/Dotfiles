@@ -58,6 +58,7 @@ imap jl <right>
 nmap <C-e> :NERDTreeToggle<CR>
 nmap <C-w> :TagbarToggle<CR>
 nmap <C-p> :Files<CR>
+nmap <C-l> :Rg<CR>
 
 nnoremap <Leader>fed :e $MYVIMRC<cr>
 nnoremap <Leader>fep :e $SPACECONFIG<CR>
