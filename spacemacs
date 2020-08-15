@@ -483,23 +483,15 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq org-capture-templates
         `(("t" "Todo" entry (file+headline "~/Dropbox/Org/0_all.org" "いろいろTODO")
            "** %?")
-          ("j" "Jounal" entry (file "~/Dropbox/Org/journal.org")
-           "* %?\nEntered on %U")
-          ("w" "tweet" entry (file "~/Dropbox/Org/tweet.org")
-           "* %?\nEntered on %U")
-          ("c" "Check This Out" entry (file "~/Dropbox/Org/6_checkitout.org")
+          ("c" "Check This Out" entry (file "~/Dropbox/Org/7_checkitout.org")
            "* %?\n")
-          ("a" "Article" entry (file+headline "~/Dropbox/Org/6_scrap.org" "Article")
-           "* %?\n")
-          ("r", "Research Log" entry (file "~/Dropbox/Org/research_log.org")
-           "* %?\n")
-          ("u" "学校事務TODO" entry (file+headline "~/Dropbox/Org/3_UT.org" "事務")
-           "** %?\n")))
+          ("a" "Article" entry (file+headline "~/Dropbox/Org/7_scrap.org" "Article")
+           "* %?\n")))
   (setq org-agenda-files '("~/Dropbox/Org"))
   (setq evil-escape-key-sequence "fd")
 
   (setq org-todo-keywords
-        '((sequence "TODO(t)" "TOGO" "DOING(i)" "TOREAD" "READING(r)" "PENDING(p)" "CHECKING" "|" "DONE(d)" "DEFERRED(e)" "KILL(k)" "SOMEDAY(s)")))
+        '((sequence "TODO(t)" "PROJ(p)" "HOLD(h)" "WAIT(w)" "|" "DONE(d)" "KILL(k)")))
   (setq line-move-visual nil)
 
   ;;; rust
