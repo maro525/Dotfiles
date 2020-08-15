@@ -1,7 +1,7 @@
 source ~/.zshrc_manjaro_default
 
 # alias
-alias pacmanupdate="sudo pacman -Syu"
+alias pacmanupdate="sudo pacman -Scc && sudo pacman -Syu"
 alias yayupdate="yay -Scc && yay -Syu"
 alias managerupdate="yay -S yay -d"
 alias pacmanclean="sudo pacman -Rs $(pacman -Qdtq)"
