@@ -3,25 +3,29 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-prettier',
 Plug 'neoclide/coc-eslint',
 Plug 'neoclide/coc-vetur',
-Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Yggdroot/indentLine'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
-Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'junegunn/fzf', {'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
 Plug 'airblade/vim-gitgutter'
 Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'honza/vim-snippets'
-Plug 'kassio/neoterm'
 Plug 'tpope/vim-commentary'
 Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
 Plug 'jimmay5469/vim-spacemacs'
+Plug 'sickill/vim-monokai'
+Plug 'joshdick/onedark.vim'
 Plug 'jacoborus/tender.vim'
+Plug 'junegunn/seoul256.vim'
+Plug 'wellle/targets.vim'
+Plug 'iberianpig/ranger-explorer.vim'
+Plug 'rbgrouleff/bclose.vim'
+Plug 'uiiaoo/java-syntax.vim'
 call plug#end()
 
 let g:python_host_prog = '/usr/bin/python2'
@@ -37,18 +41,20 @@ set expandtab
 set splitright
 set clipboard=unnamed
 set hls
-set termguicolors
 
+" colorscheme
 set background=dark
 syntax on
 set t_Co=256
+set termguicolors
+colorscheme seoul256
+hi PMenu guifg=#00aa99 guibg=NONE guisp=NONE gui=bold ctermfg=124 ctermbg=NONE cterm=bold
+
+set ignorecase
+set smartcase
 
 " vim -gitgutter
 "set updatetime=100
-
-" colorcheme
-colorscheme tender
-" let g:lightline = {'colorscheme': 'onedark'}
 
 " keybindings
 inoremap fd <esc>
@@ -63,8 +69,7 @@ nmap <C-l> :Rg<CR>
 nnoremap <Leader>fed :e $MYVIMRC<cr>
 nnoremap <Leader>fep :e $SPACECONFIG<CR>
 
-noremap <leader>g :<C-u>Denite grep:. -no-empty -mode=normal<CR>
-nnoremap <leader>j :<C-u>DentieCursorWord grep:. -mode=normal<CR>
+nmap s <Plug>(easymotion-overwin-f2)
 
 " lint
 command! -nargs=0 Format :call CocAction('format')
@@ -78,13 +83,6 @@ if !exists('*ReloadVimrc')
     endfun
 endif
 autocmd! BufWritePost $MYVIMRC call ReloadVimrc()
-
-let g:neoterm_default_mod='belowright'
-let g:neoterm_size=10
-let g:neoterm_autoscroll=1
-tnoremap <silent> <C-w> <C-\><C-n><C-w>
-
-nmap s <Plug>(easymotion-overwin-f2)
 
 " coc.nvim
 set hidden
