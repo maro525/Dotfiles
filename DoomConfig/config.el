@@ -62,7 +62,10 @@
 ;; (set-terminal-coding-system 'utf-8)
 ;; (set-keyboard-coding-system 'utf-8)
 ;; jp font
-(set-fontset-font t 'japanese-jisx0208 (font-spec :family "Noto Sans CJK JP" :height 100))
+;; (set-fontset-font t 'japanese-jisx0208 (font-spec :family "Noto Sans CJK JP" :height 100))
+(set-fontset-font nil 'japanese-jisx0208 (font-spec :family "Noto Sans CJK JP" :height 100))
+(set-fontset-font (frame-parameter nil 'font) 'japanese-jisx0208 (font-spec :family "Noto Sans CJK JP" :size 26))
+(set-fontset-font (frame-parameter nil 'font) 'katakana-jisx0201 (font-spec :family "Noto Sans CJK JP" :size 26))
 
 ;; global
 ;; =========================
@@ -134,44 +137,27 @@
   (setq org-default-notes-file (concat org-directory "6_scrap.org")))
 
 ;; org-super-agenda
-(use-package! org-super-agenda
-  :commands (org-super-agenda-mode))
-(after! org-agenda
-  (org-super-agenda-mode))
-
-(setq org-agenda-skip-scheduled-if-done t
-      org-agenda-skip-deadline-if-done t
-      org-agenda-include-deadlines t
-      org-agenda-block-separator nil
-      org-agenda-tags-column 100
-      org-agenda-compact-blocks t)
-(setq org-agenda-custom-commands
-      '(("o" "Overview"
-         ((agenda "" ((org-agenda-span 'day)
-                      (org-super-agenda-groups
-                       '((:name "Today"
-                          :time-grid t
-                          :data today
-                          :todo "TODAY"
-                          :scheduled today
-                          :order 1)))))
-          (alltodo "" ((org-agenda-overriding-header "")
-                       (org-super-agenda-groups
-                        '((:name "Next to do"
-                           :todo "NEXT"
-                           :order 1)
-                          (:name "Important"
-                           :priority "A"
-                           :order 6)
-                          (:name "Due Tody"
-                           :deadline today
-                           :order 2)
-                          (:name "Trivial"
-                           :priority<= "E"
-                           :tag ("Trivial" "Unimportant")
-                           :todo ("SOMEDAY" )
-                           :order 90)
-                          (:discard (:tag ("Chore" "Routine" "Dayly")))))))))))
+(use-package org-super-agenda
+  :after org-agenda
+  :init
+  (setq org-super-agenda-groups '((:name "Today"
+                                   :time-grid t
+                                   :scheduled today)
+                                  (:name "Due today"
+                                   :deadline today)
+                                  (:name "Important"
+                                   :priority "A")
+                                  (:name "Overdue"
+                                   :deadline past)
+                                  (:name "Due soon"
+                                   :deadline future)))
+  :config
+  (org-super-agenda-mode)
+  (setq org-agenda-time-grid
+        '((daily today require-timed)
+          (0900 01000 1100 1200 1300 1400 1500 1600 1700 1800 1900 2000 2100 2200 2300 2400)
+          "-"
+    "----------------")))
 
 ;; ;; org-clock
 ;; ====================
