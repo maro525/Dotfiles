@@ -1,8 +1,5 @@
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc-prettier',
-Plug 'neoclide/coc-eslint',
-Plug 'neoclide/coc-vetur',
 Plug 'itchyny/lightline.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Yggdroot/indentLine'
@@ -26,6 +23,10 @@ Plug 'wellle/targets.vim'
 Plug 'iberianpig/ranger-explorer.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'uiiaoo/java-syntax.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'HerringtonDarkholme/yats.vim'
 call plug#end()
 
 let g:python_host_prog = '/usr/bin/python2'
@@ -43,18 +44,31 @@ set clipboard=unnamed
 set hls
 
 " colorscheme
-set background=dark
-syntax on
-set t_Co=256
-set termguicolors
-colorscheme seoul256
-hi PMenu guifg=#00aa99 guibg=NONE guisp=NONE gui=bold ctermfg=124 ctermbg=NONE cterm=bold
+" set background=dark
+" syntax on
+" set t_Co=256
+" set termguicolors
+colorscheme monokai 
+" hi PMenu guifg=#00aa99 guibg=NONE guisp=NONE gui=bold ctermfg=124 ctermbg=NONE cterm=bold
 
 set ignorecase
 set smartcase
 
 " vim -gitgutter
 "set updatetime=100
+
+" let g:lightline = {
+"   \'active': {
+"     \'right': [
+"       \['coc']
+"     \]
+"   \},
+"   \'component_function': {
+"     \'coc': 'coc#status'
+"   \}
+" \}
+
+let g:vim_jsx_pretty_colorful_config = 1
 
 " keybindings
 inoremap fd <esc>

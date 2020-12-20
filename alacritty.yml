@@ -49,10 +49,10 @@ colors:
 
 font:
   normal:
-    family: Inconsolata
+    family: Hack Nerd Font
   bold:
-    family: Inconsolata
+    family: Hack Nerd Font
   italic:
-    family: Inconsolata
+    family: Hack Nerd Font
 
   size: 18.0

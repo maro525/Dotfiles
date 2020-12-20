@@ -10,21 +10,29 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+#emacs
+export PATH="/Applications/Emacs.app/Contents/MacOS/:$PATH"
+export PATH="/Applications/Emacs.app/Contents/MacOS/bin/:$PATH"
+
 # alias
-alias brewupdate="brew upgrade && brew update && rm -rf $(brew --cache)"
+alias brewupdate="brew upgrade && brew update"
+alias brewclean="rm -rf $(brew --cache) && brew autoremove -v && brew cleanup --prune 1"
 alias nodeltscheck="curl -s https://nodejs.org/download/release/index.json | jq -r 'sort_by(.date) | reverse | map(select(.lts != false)) | .[0].version'"
 alias python="python3"
 alias pip="pip3"
 
 # java
 export JAVA_HOME=`/usr/libexec/java_home -v "13"`
-PATH=${JAVA_HOME}/biin:${PATH}
+PATH=${JAVA_HOME}/bin:${PATH}
 
 # processing-py
 PATH=/Users/hidemaro/myLibrary/processingpy:$PATH
 
 # gnu-sed
 PATH=/usr/local/opt/gnu-sed/libexec/gnubin/:$PATH
+
+# basictex
+PATH=/usr/local/texlive/2016basic/bin/x86_64-darwin/:$PATH
 
 # vim
 export MYVIMRC="~/.config/nvim/init.vim"

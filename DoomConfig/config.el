@@ -15,11 +15,12 @@
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 ;; test
-(setq doom-font (font-spec :family "Iosevka Nerd Font" :size 14)
-      doom-big-font (font-spec :family "Iosevka Nerd Font" :size 14))
+(setq doom-font (font-spec :family "FuraCode Nerd Font" :size 14)
+      doom-big-font (font-spec :family "FuraCode Nerd Font" :size 18))
       ;; doom-variable-pitch-font (font-spec :family "Avenir Next" :size 14))
 ;; (setq doom-unicode-font (font-spec :name "DejaVu Sans Mono" :size 14))
 (setq +helm-posframe-text-scale 0)
+(setq-default line-spacing 2)
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -37,7 +38,7 @@
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
-;; - `use-package' for configuring packages
+;; - `use-package' for configuring packagesira
 ;; - `after!' for running code after a package has loaded
 ;; - `add-load-path!' for adding directories to the `load-path', where Emacs
 ;;   looks when you load packages with `require' or `use-package'.
@@ -63,9 +64,9 @@
 ;; (set-keyboard-coding-system 'utf-8)
 ;; jp font
 ;; (set-fontset-font t 'japanese-jisx0208 (font-spec :family "Noto Sans CJK JP" :height 100))
-(set-fontset-font nil 'japanese-jisx0208 (font-spec :family "Noto Sans CJK JP" :height 100))
-(set-fontset-font (frame-parameter nil 'font) 'japanese-jisx0208 (font-spec :family "Noto Sans CJK JP" :size 26))
-(set-fontset-font (frame-parameter nil 'font) 'katakana-jisx0201 (font-spec :family "Noto Sans CJK JP" :size 26))
+;;(set-fontset-font nil 'japanese-jisx0208 (font-spec :family "Hiragino Sans" :height 100))
+;;(set-fontset-font (frame-parameter nil 'font) 'japanese-jisx0208 (font-spec :family "Hiragino Sans" :size 26))
+;;(set-fontset-font (frame-parameter nil 'font) 'katakana-jisx0201 (font-spec :family "Hiragino Sans" :size 26))
 
 ;; global
 ;; =========================
@@ -110,9 +111,9 @@
 ;; org basic settings
 ;; ===========================
 (setq
- org-ellipsis " ▾ "
  org-tags-column -80
- org-superstar-headline-bullets-list '("◎" "○" "●"))
+ org-ellipsis " ▼ "
+ org-superstar-headline-bullets-list '("◉" "○" "◆" "▶"))
 
 (after! org
   (custom-theme-set-faces

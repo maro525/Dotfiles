@@ -24,7 +24,7 @@ source $ZSH/oh-my-zsh.sh
 # alias
 alias ls="ls -a"
 alias drop="cd ~/Dropbox"
-alias zshrcedit="vim ~/.zshrc"
+alias zshrcedit="nvim ~/.zshrc"
 alias pythonsimpleserver="python -m http.server"
 
 # rust
