@@ -102,6 +102,8 @@
 (map!
  :i "j" 'my-j)
 
+(map! :g "C-;" #'+ivy/projectile-find-file)
+
 ;; window settings
 ;; (defun reset-frame-parameter (frame)
   ;; (sleep-for 0.1)

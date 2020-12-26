@@ -14,6 +14,7 @@ plugins=(
     osx
     zsh-syntax-highlighting
     zsh-autosuggestions
+    k
     history-substring-search
 )
 autoload  -U compinit
@@ -26,6 +27,22 @@ alias ls="ls -a"
 alias drop="cd ~/Dropbox"
 alias zshrcedit="nvim ~/.zshrc"
 alias pythonsimpleserver="python -m http.server"
+alias ff="fzf --preview 'bat  --color=always --style=header,grid --line-range :100 {}'"
 
 # rust
 export PATH=/Users/hidemaro/.cargo/bin:$PATH
+
+cdf() {
+   local file
+   local dir
+   file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
+}
+
+
+fd() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir"
+}
+

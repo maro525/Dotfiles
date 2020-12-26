@@ -1,28 +1,59 @@
 call plug#begin('~/.local/share/nvim/plugged')
+" syntax
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'joshdick/onedark.vim'
-Plug 'itchyny/lightline.vim'
+Plug 'uiiaoo/java-syntax.vim'
+" whitespace
 Plug 'ntpeters/vim-better-whitespace'
+" indent
 Plug 'Yggdroot/indentLine'
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
-Plug 'junegunn/fzf', {'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'airblade/vim-rooter'
-Plug 'airblade/vim-gitgutter'
-Plug 'xuyuanp/nerdtree-git-plugin'
+"snippets
 Plug 'honza/vim-snippets'
-Plug 'tpope/vim-commentary'
-Plug 'easymotion/vim-easymotion'
+" auto-pair
 Plug 'jiangmiao/auto-pairs'
-Plug 'jimmay5469/vim-spacemacs'
+" lint
+Plug 'dense-analysis/ale'
+
+" style
+Plug 'joshdick/onedark.vim'
 Plug 'sickill/vim-monokai'
 Plug 'jacoborus/tender.vim'
 Plug 'junegunn/seoul256.vim'
-Plug 'wellle/targets.vim'
-Plug 'iberianpig/ranger-explorer.vim'
+
+" status line
+Plug 'itchyny/lightline.vim'
+
+" nerdtree
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'xuyuanp/nerdtree-git-plugin'
+" ranger
+Plug 'kevinhwang91/rnvimr'
+
+" tagbar
+Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
+
+" command line fzf
+Plug 'junegunn/fzf', {'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+" rooter
+Plug 'airblade/vim-rooter'
+
+" git 
+Plug 'airblade/vim-gitgutter'
+
+" key 
+Plug 'tpope/vim-commentary'
+Plug 'easymotion/vim-easymotion'
+Plug 'jimmay5469/vim-spacemacs'
 Plug 'rbgrouleff/bclose.vim'
-Plug 'uiiaoo/java-syntax.vim'
+
+" floating window
+Plug 'voldikss/vim-floaterm'
+
+"  latex
+Plug 'lervag/vimtex'
+Plug 'thinca/vim-quickrun'
+
 call plug#end()
 
 let g:python_host_prog = '/usr/local/bin/python2'
@@ -32,12 +63,13 @@ let mapleader = "\<SPACE>"
 
 set number
 set autoindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set splitright
 set clipboard=unnamed
 set hls
+set pumblend=30
 
 set termguicolors
 set background=dark
@@ -57,16 +89,43 @@ inoremap fd <esc>
 
 imap jl <right>
 
-nmap <C-e> :NERDTreeToggle<CR>
-nmap <C-w> :TagbarToggle<CR>
-nmap <C-p> :Files<CR>
+nnoremap <C-e> :NERDTreeToggle<CR>
+nnoremap <C-w> :TagbarToggle<CR>
+nnoremap <C-p> :Files<CR>
+nnoremap <C-g> :Rg<CR>
+nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>l :BLines<CR>
 
 nnoremap <Leader>fed :e $MYVIMRC<cr>
 nnoremap <Leader>fep :e $SPACECONFIG<CR>
-nmap s <Plug>(easymotion-overwin-f2)
+nnoremap s <Plug>(easymotion-overwin-f2)
 
 " lint
 command! -nargs=0 Format :call CocAction('format')
+
+" rnvimr
+tnoremap <silent> <M-i> <C-\><C-n>:RnvimrResize<CR>
+nnoremap <silent> <Leader>ro :RnvimrToggle<CR>
+tnoremap <silent> <M-o> <C-\><C-n>:RnvimrToggle<CR>
+let g:rnvimr_enable_ex = 1
+let g:rnvimr_enable_picker = 1
+let g:rnvimr_layout = {
+            \ 'relative': 'editor',
+            \ 'width': float2nr(round(1.0 * &columns)),
+            \ 'height': float2nr(round(0.42 * &lines)),
+            \ 'col': float2nr(round(0.0 * &columns)),
+            \ 'row': float2nr(round(0.54 * &lines)),
+            \ 'style': 'minimal'
+            \ }
+
+" floaterm
+nnoremap    <Leader>to   :FloatermToggle<CR>
+" noremap!    <Leader>t   <ESC>:FloatermToggle<CR>
+tnoremap    <Leader>to   <C-\><C-n>:FloatermToggle<CR>
+
+let g:floaterm_width = 100
+let g:floaterm_winblend = 0
+
 
 "reload vim confing
 if !exists('*ReloadVimrc')
@@ -78,8 +137,18 @@ if !exists('*ReloadVimrc')
 endif
 autocmd! BufWritePost $MYVIMRC call ReloadVimrc()
 
+"  vim tex
+let g:latex_latexmk_options = '-gg -synctex=1 -pdfxe -f'
+let g:vimtex_view_method='skim'
+let g:quickrun_config = {
+  \  'tex' : {
+  \    'command': 'latexmk',
+  \    'cmdopt': '-gg -synctex=1 -dfxe -f -pv',
+  \    'exec': ['%c %i %s']
+  \ }
+ \}
 
-" coc.nvim
+"oc.nvim
 set hidden
 set nobackup
 set nowritebackup

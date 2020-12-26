@@ -55,3 +55,4 @@
 (package! fancy-narrow)
 (package! org-super-agenda)
 (package! extempore-mode)
+(package! pdf-tools)
