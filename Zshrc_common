@@ -1,6 +1,8 @@
 #zsh
+source ~/.oh-my-zsh/custom/themes/awesomepanda.zsh-theme
+ZSH_THEME="awesomepanda"
 export ZSH=~/.oh-my-zsh
-source ~/.zshrc_powerline9k
+# source ~/.zshrc_powerline9k
 
 export DEFAULT_USER="$USER"
 

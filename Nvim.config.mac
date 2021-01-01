@@ -18,6 +18,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'sickill/vim-monokai'
 Plug 'jacoborus/tender.vim'
 Plug 'junegunn/seoul256.vim'
+Plug 'jamespwilliams/bat.vim'
 
 " status line
 Plug 'itchyny/lightline.vim'
@@ -38,10 +39,10 @@ Plug 'junegunn/fzf.vim'
 " rooter
 Plug 'airblade/vim-rooter'
 
-" git 
+" git
 Plug 'airblade/vim-gitgutter'
 
-" key 
+" key
 Plug 'tpope/vim-commentary'
 Plug 'easymotion/vim-easymotion'
 Plug 'jimmay5469/vim-spacemacs'
@@ -50,7 +51,10 @@ Plug 'rbgrouleff/bclose.vim'
 " floating window
 Plug 'voldikss/vim-floaterm'
 
-"  latex
+" altern between files
+Plug 'kana/vim-altr'
+
+""  latex
 Plug 'lervag/vimtex'
 Plug 'thinca/vim-quickrun'
 
@@ -62,24 +66,38 @@ let g:python3_host_prog = '/Users/hidemaro/.pyenv/shims/python3'
 let mapleader = "\<SPACE>"
 
 set number
-set autoindent
+set cursorline
+
 set tabstop=2
 set shiftwidth=2
+
 set expandtab
+
 set splitright
-set clipboard=unnamed
-set hls
+
+" 透明度
 set pumblend=30
+
+set clipboard=unnamed
+
+syntax on
+
+set autoindent
+set smartindent
 
 set termguicolors
 set background=dark
-syntax on
 set t_Co=256
-colorscheme seoul256
-hi PMenu guifg=#00aa99 guibg=NONE guisp=NONE gui=bold ctermfg=124 ctermbg=NONE cterm=bold
+colorscheme bat
 
 set ignorecase
 set smartcase
+set hlsearch
+set incsearch
+
+set list
+
+set wrap
 
 " vim -gitgutter
 "set updatetime=100
@@ -126,6 +144,9 @@ tnoremap    <Leader>to   <C-\><C-n>:FloatermToggle<CR>
 let g:floaterm_width = 100
 let g:floaterm_winblend = 0
 
+" altr
+nmap <leader>a <Plug>(altr-forward)
+nmap <leader>A <Plug>(altr-back)
 
 "reload vim confing
 if !exists('*ReloadVimrc')
