@@ -1,4 +1,4 @@
-source ~/.zshrc_manjaro_default
+source ~/.zshrc_common
 
 # alias
 alias pacmanupdate="sudo pacman -Scc && sudo pacman -Syu"

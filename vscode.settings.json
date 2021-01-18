@@ -1128,7 +1128,7 @@
     "workbench.preferredLightColorTheme": "Monokai",
     "workbench.preferredDarkColorTheme": "Monokai",
     "editor.tabSize": 2,
-    "editor.fontSize": 10,
+    "editor.fontSize": 12,
     "editor.wordWrap": "on",
     "workbench.colorTheme": "Monokai",
 }

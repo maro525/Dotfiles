@@ -15,8 +15,8 @@
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 ;; test
-(setq doom-font (font-spec :family "FuraCode Nerd Font" :size 14)
-      doom-big-font (font-spec :family "FuraCode Nerd Font" :size 18))
+(setq doom-font (font-spec :family "FuraCode Nerd Font" :size 11)
+      doom-big-font (font-spec :family "FuraCode Nerd Font" :size 14))
       ;; doom-variable-pitch-font (font-spec :family "Avenir Next" :size 14))
 ;; (setq doom-unicode-font (font-spec :name "DejaVu Sans Mono" :size 14))
 (setq +helm-posframe-text-scale 0)
