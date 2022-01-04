@@ -1,14 +1,4 @@
-export TERM="xterm-256color"
-
 source ~/.zshrc_common
-
-# node.js
-PATH=/Users/hidemaro/.nodebrew/current/bin:$PATH
-
-#pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
 
 #emacs
 export PATH="/Applications/Emacs.app/Contents/MacOS/:$PATH"
@@ -17,25 +7,25 @@ export PATH="/Applications/Emacs.app/Contents/MacOS/bin/:$PATH"
 # alias
 alias brewupdate="brew upgrade && brew update"
 alias brewclean="rm -rf $(brew --cache) && brew autoremove -v && brew cleanup --prune 1"
-alias nodeltscheck="curl -s https://nodejs.org/download/release/index.json | jq -r 'sort_by(.date) | reverse | map(select(.lts != false)) | .[0].version'"
-alias python="python3"
-alias pip="pip3"
-
-# java
-export JAVA_HOME=`/usr/libexec/java_home -v "13"`
-PATH=${JAVA_HOME}/bin:${PATH}
-
-# processing-py
-PATH=/Users/hidemaro/myLibrary/processingpy:$PATH
-
-# gnu-sed
-PATH=/usr/local/opt/gnu-sed/libexec/gnubin/:$PATH
-
-# basictex
-PATH=/usr/local/texlive/2016basic/bin/x86_64-darwin/:$PATH
 
 # vim
 export MYVIMRC="~/.config/nvim/init.vim"
 export SPACECONFIG="~/.local/share/nvim/plugged/vim-spacemacs/plugin/spacemacs.vim"
 
-source ~/.aliasme/aliasme.sh
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+[[ -d ~/.rbenv  ]] && \
+  export PATH=${HOME}/.rbenv/bin:${PATH} && \
+  eval "$(rbenv init -)"
+
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+# flutter
+export PATH="/Users/hidemaro/Documents/flutter/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

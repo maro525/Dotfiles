@@ -1,3 +1,8 @@
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the start of this file.
+[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+#### END FIG ENV VARIABLES ####
 # コマンド履歴
 HISTFILE=~/.zsh_history
 HISTSIZE=6000000
@@ -22,5 +27,10 @@ zstyle ':completion:*' group-nmae # group results by category
 export LANG=ja_JP.UTF-8
 export LC_ALL=ja_JP.UTF-8
 
-PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin
+PATH=/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:/usr/bin:/bin:$PATH
 export PATH
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the end of this file.
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+#### END FIG ENV VARIABLES ####

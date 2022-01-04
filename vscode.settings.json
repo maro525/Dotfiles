@@ -1124,11 +1124,11 @@
     ],
     "vim.easymotion": true,
     "editor.suggestSelection": "first",
-    "editor.fontFamily": "FiraCode Nerd Font,  Iosevka Term, Cascadia Code, Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "Cascadia Code,  Iosevka Term,  FiraCode Nerd Font,   Consolas, 'Courier New', monospace",
     "workbench.preferredLightColorTheme": "Monokai",
     "workbench.preferredDarkColorTheme": "Monokai",
     "editor.tabSize": 2,
-    "editor.fontSize": 12,
     "editor.wordWrap": "on",
     "workbench.colorTheme": "Monokai",
+    "editor.fontSize": 13,
 }

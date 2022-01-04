@@ -15,10 +15,8 @@
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 ;; test
-(setq doom-font (font-spec :family "FuraCode Nerd Font" :size 11)
-      doom-big-font (font-spec :family "FuraCode Nerd Font" :size 14))
-      ;; doom-variable-pitch-font (font-spec :family "Avenir Next" :size 14))
-;; (setq doom-unicode-font (font-spec :name "DejaVu Sans Mono" :size 14))
+(setq doom-font (font-spec :family "Hack Nerd Font":size 11)
+      doom-big-font (font-spec :family "Hack Nerd Font" :size 14))
 (setq +helm-posframe-text-scale 0)
 (setq-default line-spacing 2)
 
@@ -60,13 +58,11 @@
 ;; (prefer-coding-system 'utf-8)
 ;; (setq default-file-name-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
+(setq-default buffer-file-coding-system 'utf-8)
 ;; (set-terminal-coding-system 'utf-8)
 ;; (set-keyboard-coding-system 'utf-8)
 ;; jp font
-;; (set-fontset-font t 'japanese-jisx0208 (font-spec :family "Noto Sans CJK JP" :height 100))
-;;(set-fontset-font nil 'japanese-jisx0208 (font-spec :family "Hiragino Sans" :height 100))
-;;(set-fontset-font (frame-parameter nil 'font) 'japanese-jisx0208 (font-spec :family "Hiragino Sans" :size 26))
-;;(set-fontset-font (frame-parameter nil 'font) 'katakana-jisx0201 (font-spec :family "Hiragino Sans" :size 26))
+;; (set-fontset-font t 'japanese-jisx0208 (font-spec :family "Noto Sans CJK JP" :size 19))
 
 ;; global
 ;; =========================

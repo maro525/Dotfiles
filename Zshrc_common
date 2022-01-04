@@ -13,7 +13,7 @@ plugins=(
     pip
     python
     brew
-    osx
+    macos
     zsh-syntax-highlighting
     zsh-autosuggestions
     k
@@ -30,6 +30,10 @@ alias drop="cd ~/Dropbox"
 alias zshrcedit="nvim ~/.zshrc"
 alias pythonsimpleserver="python -m http.server"
 alias ff="fzf --preview 'bat  --color=always --style=header,grid --line-range :100 {}'"
+
+# python
+alias python="python3"
+alias pip="pip3"
 
 # rust
 export PATH=/Users/hidemaro/.cargo/bin:$PATH
