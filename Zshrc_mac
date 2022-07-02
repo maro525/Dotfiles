@@ -1,11 +1,16 @@
-source ~/.zshrc_common
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-#emacs
-export PATH="/Applications/Emacs.app/Contents/MacOS/:$PATH"
-export PATH="/Applications/Emacs.app/Contents/MacOS/bin/:$PATH"
+source ~/.zshrc_common
+source ~/.zshrc_zinit
 
 # alias
-alias brewupdate="brew upgrade && brew update"
+alias brewupdate="brew upgrade && arch -arm64 brew update"
+alias brewcaskupgrade="brew upgrade --cask --greedy"
 alias brewclean="rm -rf $(brew --cache) && brew autoremove -v && brew cleanup --prune 1"
 
 # vim
@@ -15,12 +20,12 @@ export SPACECONFIG="~/.local/share/nvim/plugged/vim-spacemacs/plugin/spacemacs.v
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
+ eval "$(pyenv init -)"
 fi
 
 [[ -d ~/.rbenv  ]] && \
-  export PATH=${HOME}/.rbenv/bin:${PATH} && \
-  eval "$(rbenv init -)"
+   export PATH=${HOME}/.rbenv/bin:${PATH} && \
+   eval "$(rbenv init -)"
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
@@ -29,3 +34,6 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="/Users/hidemaro/Documents/flutter/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

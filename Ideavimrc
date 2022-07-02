@@ -1,0 +1,20 @@
+source ~/.intellimacs/spacemacs.vim
+
+source ~/.intellimacs/which-key.vim
+
+inoremap fd <ESC>
+imap jl <right>
+
+
+" leaderの設定
+let mapleader = "\<Space>"
+
+" easymotionの設定
+set easymotion
+map <leader>w <Plug>(easymotion-bd-w)  " word単位移動
+map s <Plug>(easymotion-bd-f2) " 検索移動
+
+map <Leader>sl <Plug>(easymotion-lineforward)
+map <Leader>sj <Plug>(easymotion-j)
+map <Leader>sk <Plug>(easymotion-k)
+map <Leader>sh <Plug>(easymotion-linebackward)
