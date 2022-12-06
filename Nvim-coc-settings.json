@@ -1,0 +1,18 @@
+{
+  "svelte.enable-ts-plugin": true,
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "tsserver.enableJavascript": false,
+  "eslint.autoFixOnSave": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "html",
+    "markdown",
+    "typescriptreact",
+    "typescript",
+    "javascriptreact",
+    "javascript",
+    "json",
+    "svelte",
+    "rust"
+  ]
+}
