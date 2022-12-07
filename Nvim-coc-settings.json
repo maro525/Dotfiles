@@ -3,6 +3,7 @@
   "coc.preferences.extensionUpdateCheck": "daily",
   "tsserver.enableJavascript": false,
   "eslint.autoFixOnSave": true,
+  "eslint.run": "onSave",
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "html",
